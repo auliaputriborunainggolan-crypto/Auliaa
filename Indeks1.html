@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Profil Siswa RPL - Aulia Putri</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <style>
+    :root {
+      --purple: #8054d9;
+      --dark-purple: #392267;
+      --light-purple: #f0e8ff;
+      --pink: #fbe7f5;
+      --text: #35264d;
+      --muted: #786b8c;
+      --white: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      background: #faf8ff;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    section {
+      scroll-margin-top: 90px;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      background: rgba(255,255,255,.96);
+      box-shadow: 0 3px 20px #d9c9ef80;
+      padding: 15px 0;
+    }
+
+    .navbar-brand {
+      color: var(--dark-purple);
+      font-size: 21px;
+      font-weight: 800;
+    }
+
+    .nav-link {
+      color: var(--text);
+      font-weight: 600;
+      margin: 0 5px;
+    }
+
+    .nav-link:hover {
+      color: var(--purple);
+    }
+
+    /* BUTTON */
+    .btn-purple {
+      display: inline-block;
+      padding: 12px 22px;
+      border: none;
+      border-radius: 12px;
+      color: white;
+      background: linear-gradient(135deg, #9169e8, #7144c5);
+      text-decoration: none;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    .btn-purple:hover {
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px #8054d955;
+    }
+
+    .btn-soft {
+      display: inline-block;
+      padding: 11px 21px;
+      border: 2px solid var(--purple);
+      border-radius: 12px;
+      color: var(--purple);
+      text-decoration: none;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    .btn-soft:hover {
+      background: var(--purple);
+      color: white;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 70px 0;
+      background: linear-gradient(135deg, #e9dcff, #fff0fa, #eee6ff);
+      overflow: hidden;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      padding: 9px 16px;
+      background: white;
+      color: var(--purple);
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: bold;
+      box-shadow: 0 4px 15px #cbb5eb60;
+    }
+
+    .hero h1 {
+      margin-top: 20px;
+      font-size: clamp(34px, 5vw, 55px);
+      line-height: 1.15;
+      font-weight: 800;
+      color: var(--dark-purple);
+    }
+
+    .hero h1 span {
+      color: var(--purple);
+    }
+
+    .hero p {
+      margin: 18px 0 25px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .hero-photo {
+      position: relative;
+      max-width: 330px;
+      margin: auto;
+      padding: 10px;
+      background: white;
+      border-radius: 35px;
+      transform: rotate(2deg);
+      box-shadow: 0 15px 40px #9b79ca40;
+    }
+
+    .hero-photo img {
+      display: block;
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      border-radius: 27px;
+    }
+
+    .photo-label {
+      position: absolute;
+      bottom: 24px;
+      left: 22px;
+      right: 22px;
+      padding: 12px;
+      background: #ffffffed;
+      border-radius: 14px;
+      text-align: center;
+      font-weight: bold;
+      color: var(--dark-purple);
+    }
+
+    /* SCHOOL PHOTO */
+    .school-photo {
+      margin-top: 32px;
+      position: relative;
+      border: 6px solid white;
+      border-radius: 23px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px #8060a830;
+    }
+
+    .school-photo img {
+      display: block;
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+    }
+
+    .school-label {
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      padding: 10px;
+      color: white;
+      background: #302044c9;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    /* SECTION TITLE */
+    .section-space {
+      padding: 65px 0;
+    }
+
+    .section-heading {
+      margin-bottom: 38px;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--dark-purple);
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    .heading-line {
+      width: 65px;
+      height: 5px;
+      margin: 13px auto;
+      border-radius: 10px;
+      background: var(--purple);
+    }
+
+    /* GENERAL CARD */
+    .custom-card {
+      height: 100%;
+      padding: 27px;
+      background: white;
+      border: 1px solid #ece2fa;
+      border-radius: 23px;
+      box-shadow: 0 8px 25px #8060a810;
+      transition: .3s;
+    }
+
+    .custom-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px #8060a820;
+    }
+
+    .round-icon {
+      width: 52px;
+      height: 52px;
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 16px;
+      background: var(--light-purple);
+      color: var(--purple);
+      font-size: 25px;
+    }
+
+    /* ABOUT */
+    .about-photo {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 6px solid white;
+      box-shadow: 0 10px 30px #8060a825;
+    }
+
+    .info-row {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding: 13px 0;
+      border-bottom: 1px solid #eee8f5;
+    }
+
+    .info-row:last-child {
+      border-bottom: none;
+    }
+
+    .info-row .round-icon {
+      width: 42px;
+      height: 42px;
+      font-size: 20px;
+    }
+
+    .info-label {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .info-value {
+      font-weight: bold;
+      overflow-wrap: anywhere;
+    }
+
+    .skill {
+      display: inline-block;
+      padding: 8px 12px;
+      margin: 4px;
+      color: var(--dark-purple);
+      background: var(--light-purple);
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    /* JURUSAN */
+    .major-card {
+      height: 100%;
+      overflow: hidden;
+      background: white;
+      border: 1px solid #e8ddfa;
+      border-radius: 22px;
+      box-shadow: 0 7px 23px #8060a812;
+      transition: .3s;
+    }
+
+    .major-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 15px 32px #8060a830;
+    }
+
+    .major-photo {
+      width: 100%;
+      height: 170px;
+      display: block;
+      object-fit: cover;
+      background: var(--light-purple);
+    }
+
+    .major-content {
+      position: relative;
+      padding: 48px 20px 23px;
+    }
+
+    .major-logo {
+      position: absolute;
+      top: -37px;
+      left: 20px;
+      width: 74px;
+      height: 74px;
+      padding: 5px;
+      object-fit: contain;
+      background: white;
+      border: 3px solid #eee4ff;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px #8060a825;
+    }
+
+    .major-content h3 {
+      font-size: 21px;
+      font-weight: 800;
+      color: var(--dark-purple);
+    }
+
+    .major-content p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .major-number {
+      position: absolute;
+      top: 15px;
+      right: 18px;
+      color: #bba6df;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    /* MAP */
+    .map-card {
+      padding: 13px;
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px #8060a818;
+    }
+
+    .map-card iframe {
+      width: 100%;
+      height: 330px;
+      border: none;
+      border-radius: 17px;
+    }
+
+    /* CONTACT */
+    .contact-section {
+      color: white;
+      background: linear-gradient(135deg, #7650c8, #a582e7);
+      border-radius: 28px;
+      padding: 42px 28px;
+    }
+
+    .contact-item {
+      height: 100%;
+      padding: 20px;
+      background: #ffffff20;
+      border: 1px solid #ffffff40;
+      border-radius: 16px;
+    }
+
+    .contact-item a {
+      color: white;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 55px;
+      padding: 25px 15px;
+      text-align: center;
+      color: white;
+      background: var(--dark-purple);
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 767px) {
+      .hero {
+        padding: 45px 0;
+        text-align: center;
+      }
+
+      .hero-photo {
+        max-width: 270px;
+        margin-top: 35px;
+      }
+
+      .hero-photo img {
+        height: 290px;
+      }
+
+      .school-photo img {
+        height: 210px;
+      }
+
+      .section-space {
+        padding: 48px 0;
+      }
+
+      .section-heading h2 {
+        font-size: 27px;
+      }
+
+      .custom-card {
+        padding: 21px;
+      }
+
+      .major-photo {
+        height: 190px;
+      }
+
+      .map-card iframe {
+        height: 270px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#beranda">
+        <i class="bi bi-code-square"></i> PROFIL SISWA RPL
+      </a>
+
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#menuNavbar"
+              aria-controls="menuNavbar"
+              aria-expanded="false"
+              aria-label="Buka menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menuNavbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#beranda">Beranda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#tentang">Tentang</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#jurusan">Jurusan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#denah">Denah</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#kontak">Kontak</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BERANDA -->
+  <header class="hero" id="beranda">
+    <div class="container">
+      <div class="row align-items-center g-4">
+
+        <div class="col-lg-5">
+          <div class="hero-photo">
+            <!-- GANTI FOTO KAMU DI SINI -->
+            <img src="images/foto-saya.jpg"
+                 alt="Foto Aulia Putri">
+
+            <div class="photo-label">
+              <i class="bi bi-heart-fill text-danger"></i>
+              Aulia Putri BR Nainggolan
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <span class="hero-tag">
+            <i class="bi bi-stars"></i>
+            Siswa Rekayasa Perangkat Lunak
+          </span>
+
+          <h1>
+            Halo, Saya<br>
+            <span>Aulia Putri</span> 👋
+          </h1>
+
+          <p>
+            Selamat datang di website profil saya!
+            Saya siswa RPL yang tertarik dengan teknologi,
+            desain website, dan dunia pemrograman.
+          </p>
+
+          <div class="d-flex gap-3 flex-wrap
+                      justify-content-center justify-content-lg-start">
+            <a href="#tentang" class="btn-purple">
+              Tentang Saya <i class="bi bi-arrow-down"></i>
+            </a>
+
+            <a href="#jurusan" class="btn-soft">
+              Lihat Jurusan
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- FOTO SEKOLAH -->
+      <div class="row justify-content-center mt-4">
+        <div class="col-lg-9">
+          <div class="school-photo">
+            <!-- GANTI FOTO SEKOLAH DI SINI -->
+            <img src="images/foto-sekolah.jpg"
+                 alt="Foto gedung sekolah">
+
+            <div class="school-label">
+              <i class="bi bi-mortarboard-fill"></i>
+              Sekolahku, Tempat Meraih Masa Depan
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- TENTANG SAYA -->
+  <section class="section-space" id="tentang">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2><i class="bi bi-person-heart"></i> Tentang Saya</h2>
+        <div class="heading-line"></div>
+        <p>Kenali profil dan keahlian saya.</p>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+
+        <div class="col-lg-7">
+          <div class="custom-card">
+
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="round-icon">
+                <i class="bi bi-person"></i>
+              </div>
+
+              <div>
+                <h4 class="fw-bold mb-1">Profil Siswa</h4>
+                <p class="text-secondary mb-0">
+                  Informasi pribadi
+                </p>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="round-icon">
+                <i class="bi bi-person-fill"></i>
+              </div>
+              <div>
+                <div class="info-label">Nama</div>
+                <div class="info-value">
+                  Aulia Putri BR Nainggolan
+                </div>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="round-icon">
+                <i class="bi bi-mortarboard-fill"></i>
+              </div>
+              <div>
+                <div class="info-label">Kelas</div>
+                <div class="info-value">XI RPL 4</div>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="round-icon">
+                <i class="bi bi-bookmark-fill"></i>
+              </div>
+              <div>
+                <div class="info-label">NIS</div>
+                <div class="info-value">123409</div>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="round-icon">
+                <i class="bi bi-geo-alt-fill"></i>
+              </div>
+              <div>
+                <div class="info-label">Alamat</div>
+                <div class="info-value">JL SEROJA</div>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="round-icon">
+                <i class="bi bi-code-slash"></i>
+              </div>
+              <div>
+                <div class="info-label">Keahlian</div>
+                <div class="info-value">
+                  HTML/CSS, JavaScript, PHP/MySQL, Git
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="custom-card text-center">
+
+            <!-- GANTI FOTO PROFIL TAMBAHAN DI SINI -->
+            <img src="images/foto-profil.jpg"
+                 alt="Foto profil siswa"
+                 class="about-photo">
+
+            <h4 class="fw-bold mt-4">Terus Belajar!</h4>
+
+            <p class="text-secondary mb-3">
+              Terus belajar, terus berkembang,
+              dan raih impianmu.
+            </p>
+
+            <div>
+              <span class="skill">
+                <i class="bi bi-filetype-html"></i> HTML
+              </span>
+              <span class="skill">
+                <i class="bi bi-filetype-css"></i> CSS
+              </span>
+              <span class="skill">
+                <i class="bi bi-filetype-js"></i> JavaScript
+              </span>
+              <span class="skill">PHP</span>
+              <span class="skill">MySQL</span>
+              <span class="skill">Git</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ENAM JURUSAN -->
+  <section class="section-space"
+           id="jurusan"
+           style="background:#f2ecff">
+
+    <div class="container">
+
+      <div class="section-heading">
+        <h2><i class="bi bi-mortarboard"></i> 6 Jurusan</h2>
+        <div class="heading-line"></div>
+        <p>Kenali jurusan dan bidang keahlian di sekolah.</p>
+      </div>
+
+      <div class="row g-4">
+
+        <!-- JURUSAN 1: RPL -->
+        <div class="col-md-6 col-lg-4">
+          <div class="major-card">
+
+            <!-- GANTI FOTO RPL -->
+            <img src="images/foto-rpl.jpg"
+                 alt="Foto kegiatan RPL"
+                 class="major-photo">
+
+            <div class="major-content">
+
+              <!-- GANTI LOGO RPL -->
+              <img src="images/logo-rpl.png"
+                   alt="Logo RPL"
+                   class="major-logo">
+
+              <span class="major-number">01</span>
+
+              <h3>RPL</h3>
+              <p>
+                Rekayasa Perangkat Lunak.
+                Belajar membuat website, aplikasi,
+                dan sistem digital.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- JURUSAN 2: DKV -->
+        <div class="col-md-6 col-lg-4">
+          <div class="major-card">
+
+            <!-- GANTI FOTO DKV -->
+            <img src="images/foto-dkv.jpg"
+                 alt="Foto kegiatan DKV"
+                 class="major-photo">
+
+            <div class="major-content">
+
+              <!-- GANTI LOGO DKV -->
+              <img src="images/logo-dkv.png"
+                   alt="Logo DKV"
+                   class="major-logo">
+
+              <span class="major-number">02</span>
+
+              <h3>DKV</h3>
+              <p>
+                Desain Komunikasi Visual.
+                Mengembangkan kreativitas melalui
+                desain dan komunikasi visual.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- JURUSAN 3: PEKSOS -->
+        <div class="col-md-6 col-lg-4">
+          <div class="major-card">
+
+            <!-- GANTI FOTO PEKSOS -->
+            <img src="images/foto-peksos.jpg"
+                 alt="Foto kegiatan PEKSOS"
+                 class="major-photo">
+
+            <div class="major-content">
+
+              <!-- GANTI LOGO PEKSOS -->
+              <img src="images/logo-peksos.png"
+                   alt="Logo PEKSOS"
+                   class="major-logo">
+
+              <span class="major-number">03</span>
+
+              <h3>PEKSOS</h3>
+              <p>
+                Pekerjaan Sosial.
+                Mempelajari pelayanan, pendampingan,
+                dan kepedulian sosial.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- JURUSAN 4: TKJ -->
+        <div class="col-md-6 col-lg-4">
+          <div class="major-card">
+
+            <!-- GANTI FOTO TKJ -->
+            <img src="images/foto-tkj.jpg"
+                 alt="Foto kegiatan TKJ"
+                 class="major-photo">
+
+            <div class="major-content">
+
+              <!-- GANTI LOGO TKJ -->
+              <img src="images/logo-tkj.png"
+                   alt="Logo TKJ"
+                   class="major-logo">
+
+              <span class="major-number">04</span>
+
+              <h3>TKJ</h3>
+              <p>
+                Teknik Komputer dan Jaringan.
+                Mempelajari komputer, perangkat jaringan,
+                dan konektivitas.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- JURUSAN 5: ANIMASI -->
+        <div class="col-md-6 col-lg-4">
+          <div class="major-card">
+
+            <!-- GANTI FOTO ANIMASI -->
+            <img src="images/foto-animasi.jpg"
+                 alt="Foto kegiatan Animasi"
+                 class="major-photo">
+
+            <div class="major-content">
+
+              <!-- GANTI LOGO ANIMASI -->
+              <img src="images/logo-animasi.png"
+                   alt="Logo Animasi"
+                   class="major-logo">
+
+              <span class="major-number">05</span>
+
+              <h3>ANIMASI</h3>
+              <p>
+                Mempelajari karakter, gerakan,
+                ilustrasi, dan pembuatan animasi kreatif.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- JURUSAN 6: PSPT -->
+        <div class="col-md-6 col-lg-4">
+          <div class="major-card">
+
+            <!-- GANTI FOTO PSPT -->
+            <img src="images/foto-pspt.jpg"
+                 alt="Foto kegiatan PSPT"
+                 class="major-photo">
+
+            <div class="major-content">
+
+              <!-- GANTI LOGO PSPT -->
+              <img src="images/logo-pspt.png"
+                   alt="Logo PSPT"
+                   class="major-logo">
+
+              <span class="major-number">06</span>
+
+              <h3>PSPT</h3>
+              <p>
+                Produksi Siaran dan Program Televisi.
+                Mempelajari produksi konten audiovisual.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DENAH RUMAH KE SEKOLAH -->
+  <section class="section-space" id="denah">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2><i class="bi bi-geo-alt-fill"></i> Denah Rumah ke Sekolah</h2>
+        <div class="heading-line"></div>
+        <p>Lihat lokasi dan rute perjalanan menuju sekolah.</p>
+      </div>
+
+      <div class="custom-card">
+        <div class="row align-items-center g-4">
+
+          <div class="col-lg-8">
+            <div class="map-card">
+              <iframe
+                title="Peta lokasi sekolah"
+                src="https://www.google.com/maps?q=Jl.+Patriot+No.+20,+Sunggal&output=embed"
+                loading="lazy"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+
+          <div class="col-lg-4 text-center">
+            <div class="round-icon mx-auto mb-3"
+                 style="width:75px;height:75px;font-size:35px">
+              <i class="bi bi-sign-turn-right"></i>
+            </div>
+
+            <h4 class="fw-bold">Lokasi Sekolah</h4>
+
+            <p class="text-secondary">
+              Jl. Patriot No. 20, Sunggal
+            </p>
+
+            <a class="btn-purple"
+               href="https://www.google.com/maps/dir/?api=1&origin=Jl.+Setia+Gg.+Rukun+No.+1A,+Gaperta+Ujung&destination=Jl.+Patriot+No.+20,+Sunggal"
+               target="_blank"
+               rel="noopener noreferrer">
+              <i class="bi bi-map"></i> Lihat Rute
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAK -->
+  <section class="pb-5" id="kontak">
+    <div class="container">
+
+      <div class="contact-section">
+        <div class="text-center mb-4">
+          <i class="bi bi-chat-heart"
+             style="font-size:45px"></i>
+
+          <h2 class="fw-bold mt-3">Hubungi Saya</h2>
+
+          <p>
+            Terima kasih sudah mengunjungi website profil saya!
+          </p>
+        </div>
+
+        <div class="row g-3 justify-content-center">
+
+          <div class="col-md-5">
+            <div class="contact-item text-center">
+              <i class="bi bi-envelope fs-2"></i>
+              <h5 class="fw-bold mt-2">Email</h5>
+
+              <!-- GANTI EMAIL JIKA DIPERLUKAN -->
+              <a href="mailto:auliaputriboru.nainggolan@gmail.com">
+                auliaputriboru.nainggolan@gmail.com
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-5">
+            <div class="contact-item text-center">
+              <i class="bi bi-instagram fs-2"></i>
+              <h5 class="fw-bold mt-2">Instagram</h5>
+
+              <!-- GANTI USERNAME JIKA DIPERLUKAN -->
+              <a href="https://www.instagram.com/liaa_aulia/"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                @liaa_aulia
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      <i class="bi bi-heart-fill text-danger"></i>
+      © 2026 Profil Siswa RPL
+      <span class="mx-2">|</span>
+      Dibuat dengan semangat belajar 💜
+    </p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
